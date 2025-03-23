@@ -14,12 +14,29 @@ export default function LoginPage() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Login form data:", formData);
-    // Add login API logic here
-    // After successful login:
-    router.push("/");
+
+    try {
+      const res = await fetch("/api/login", {   // <== Updated endpoint here
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      
+
+      const data = await res.json();
+
+      if (data.success) {
+        router.push("/home");
+      } else {
+        alert(data.error || "Login failed. Please try again.");
+      }
+    } catch (err) {
+      console.error("Login error:", err);
+      alert("An error occurred during login.");
+    }
   };
 
   return (

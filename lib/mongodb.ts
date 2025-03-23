@@ -22,7 +22,6 @@
 //   cached.conn = await cached.promise;
 //   return cached.conn;
 // }
-
 import mongoose from 'mongoose';
 import { logTrace } from '@/utils/traceLogger';
 
@@ -32,7 +31,7 @@ if (!MONGODB_URI) {
   throw new Error('Please define the MONGODB_URI environment variable');
 }
 
-export const connectToDatabase = async () => {
+const connectToDatabase = async () => {
   if (mongoose.connection.readyState >= 1) {
     return;
   }
@@ -40,10 +39,14 @@ export const connectToDatabase = async () => {
   try {
     await mongoose.connect(MONGODB_URI);
     console.log('✅ MongoDB connected');
+    logTrace('MongoDB connection successful');
   } catch (error) {
     console.error('❌ MongoDB connection error:', error);
+    logTrace(`MongoDB connection error: ${error}`);
     throw error;
   }
 };
+
+export default connectToDatabase;
 
 

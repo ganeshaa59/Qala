@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
-import { connectToDatabase } from '@/lib/mongodb';
+import connectToDatabase from '@/lib/mongodb';
+
 import User from '@/models/User';
 import bcrypt from 'bcryptjs';
 import { logTrace } from '@/utils/traceLogger';
