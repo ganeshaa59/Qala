@@ -1,8 +1,0 @@
-[2025-03-23T13:24:25.370Z] New user signed up: ganeshthakkangar59@gmail.com
-[2025-03-23T13:24:26.126Z] New user signed up: ganeshthakkangar59@gmail.com
-[2025-03-23T13:38:25.052Z] New user signed up: ganeshthakkangar@gmail.com
-[2025-03-23T13:50:07.184Z] New user signed up: ganesh@gmail.com
-[2025-03-23T14:21:07.431Z] New user signed up: ganeshthgar59@gmail.com
-[2025-03-23T14:25:08.003Z] New user signed up: ganeshthgar9@gmail.com
-[2025-03-23T15:26:05.855Z] MongoDB connection successful
-[2025-03-23T15:26:06.292Z] New user signed up: sanket@gmail.com
